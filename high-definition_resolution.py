@@ -20,3 +20,5 @@ data['low_res'] = data['low_res'].apply(lambda x: os.path.join(lowres_folder,x))
 data['high_res'] = data['high_res'].apply(lambda x: os.path.join(hires_folder,x)) # high resolution images의 경로를 저장
 
 atch_size = 4
+
+
