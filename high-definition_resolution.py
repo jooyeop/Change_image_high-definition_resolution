@@ -21,4 +21,5 @@ data['high_res'] = data['high_res'].apply(lambda x: os.path.join(hires_folder,x)
 
 atch_size = 4
 
-
+image_datagen = ImageDataGenerator(rescale=1./255,validation_split=0.15)
+mask_datagen = ImageDataGenerator(rescale=1./255,validation_split=0.15)
