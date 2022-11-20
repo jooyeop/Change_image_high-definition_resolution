@@ -107,5 +107,10 @@ l15 = add([l14, l2])
 
 decoded = Conv2D(3, (3, 3), padding='same', activation='relu')(l15)
 
-autoencoder = Model(input_img, decoded)
-autoencoder.compile(optimizer='adam', loss='mean_squared_error', metrics=['accuracy'])
+autoencoder = Model(input_img, decoded) # autoencoder 모델을 생성
+autoencoder.compile(optimizer='adam', loss='mean_squared_error', metrics=['accuracy']) # 모델을 컴파일
+
+autoencoder.summary() # autoencoder 모델의 요약을 출력
+
+
+train_samples = train_hiresimage_generator.samples # train 데이터의 개수
