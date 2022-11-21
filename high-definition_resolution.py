@@ -114,3 +114,9 @@ autoencoder.summary() # autoencoder 모델의 요약을 출력
 
 
 train_samples = train_hiresimage_generator.samples # train 데이터의 개수
+val_samples = val_hiresimage_generator.samples # validation 데이터의 개수
+
+train_img_gen = imageGenerator(train_generator) # train_generator를 생성
+val_image_gen = imageGenerator(val_generator) # validation_generator를 생성
+
+model_path = 'autoencoder.h5' # 모델을 저장할 경로
