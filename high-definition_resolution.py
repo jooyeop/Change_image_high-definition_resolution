@@ -120,3 +120,41 @@ train_img_gen = imageGenerator(train_generator) # train_generator를 생성
 val_image_gen = imageGenerator(val_generator) # validation_generator를 생성
 
 model_path = 'autoencoder.h5' # 모델을 저장할 경로
+
+checkpoint = ModelCheckpoint(model_path, monitor = 'val_loss', mode = 'min', save_nest_only = True, verbose = 1) # 모델을 저장할 조건을 설정
+earlystop = EarlyStopping(monitor = 'val_loss', min_delta = 0, patience = 5, verbose = 1, restore_best_weights = True) # 조기 종료를 설정
+learning_rate_reduction = ReduceLROnPlateau(monitor = 'val_loss', patience = 3, verbose = 1, factor = 0.5, min_lr = 0.00001) # learning rate를 조정할 조건을 설정
+
+hist = autoencoder.fit_generator(train_img_gen, # train_generator를 사용하여 모델을 학습
+                                steps_per_epoch = train_samples // batch_size, # 한 epoch에 사용할 train 데이터의 개수
+                                validation_data = val_image_gen, # validation_generator를 사용하여 모델을 검증
+                                validation_steps = val_samples // batch_size, # 한 epoch에 사용할 validation 데이터의 개수
+                                epochs = 10, # 학습을 반복할 횟수
+                                callbacks = [checkpoint, earlystop, learning_rate_reduction]) # 모델을 저장하고 조기 종료 및 learning rate를 조정할 조건을 설정
+
+plt.figure(figsize=(20,8))
+plt.plot(hist.history['loss']) # 학습 데이터의 loss를 그래프에 출력
+plt.plot(hist.history['val_loss']) # 검증 데이터의 loss를 그래프에 출력
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.legend(['train', 'val'], loc='upper left') # 그래프의 범례를 설정
+plt.show()
+
+n = 0
+for i,m in val_generator:
+    img,mask = i,m # validation 데이터를 img와 mask로 분리
+    sr1 = autoencoder.predict(img) # autoencoder를 사용하여 high resolution images를 생성
+    if n < 20: # 20개의 이미지만 출력
+        fig, axs = plt.subplots(1 , 3, figsize=(20,4))
+        axs[0].imshow(img[0]) # low resolution images를 그래프에 출력
+        axs[0].set_title('Low Resolution Image')
+        axs[1].imshow(mask[0]) # high resolution images를 그래프에 출력
+        axs[1].set_title('High Resolution Image')
+        axs[2].imshow(sr1[0]) # super resolution images를 그래프에 출력
+        axs[2].set_title('Predicted High Resolution Image')
+        plt.show()
+        n+=1
+    else:
+        break
+
