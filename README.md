@@ -1,5 +1,5 @@
 # Change_image_high-definition_resolution
-U-net 모델을 활용한 Cityscapes_Image_Segmentation 프로젝트
+Autoencoders를 활용한 Image Super Resolution 프로젝트
 
 ## 프로젝트 목적
 도시 이미지를 활용하여 각 class segmentation 진행
