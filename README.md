@@ -2,15 +2,15 @@
 Autoencoders를 활용한 Image Super Resolution 프로젝트
 
 ## 프로젝트 목적
-도시 이미지를 활용하여 각 class segmentation 진행
+화질이 낮은 사진을 높은화질로 변경해주기위한 프로젝트
 
 ## 프로젝트 배경
-Segmentaion 기술에 대한 이해력 상승 및 모델 이해력 상승
+Resolution 기술에 대한 이해력 상승 및 모델 이해력 상승
 
 ## 연구 및 개발에 필요한 데이터 셋 소개
-https://www.kaggle.com/datasets/dansbecker/cityscapes-image-pairs
+https://www.kaggle.com/datasets/quadeer15sh/image-super-resolution-from-unsplash
 
-1.kaggle에서 도시 이미지의 데이터셋을 다운로드 받아 모델을 구현하였습니다.
+1.kaggle에서 이미지의 데이터셋을 다운로드 받아 모델을 구현하였습니다.
 
 
 ## 연구 및 개발에 필요한 기술 스택
