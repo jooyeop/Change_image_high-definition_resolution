@@ -14,7 +14,7 @@ https://www.kaggle.com/datasets/quadeer15sh/image-super-resolution-from-unsplash
 
 
 ## 연구 및 개발에 필요한 기술 스택
-### U-Net
+### AutoEncoders
 1. Contraction Path(encoding) : 이미지의 context를 포착
 2. Expansive Path(decoding) : feature amp을 upsampling 하여 포착한 이미지의 context를 feature map의 context와 결합한다.
   -> 이는 더욱 정확한 localization을 하는 역할
