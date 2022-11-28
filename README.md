@@ -15,9 +15,14 @@ https://www.kaggle.com/datasets/quadeer15sh/image-super-resolution-from-unsplash
 
 ## 연구 및 개발에 필요한 기술 스택
 ### AutoEncoders
-1. Contraction Path(encoding) : 이미지의 context를 포착
-2. Expansive Path(decoding) : feature amp을 upsampling 하여 포착한 이미지의 context를 feature map의 context와 결합한다.
-  -> 이는 더욱 정확한 localization을 하는 역할
+1. 오토인코더는 비지도unsupervised 방식으로 훈련된 인공 신경망으로, 먼저 데이터에 인코딩 된 표현을 학습한 다음, 학습 된 인코딩 표현에서 입력 데이터를 (가능한한 가깝게) 생성하는 것을 목표로 한다. 따라서, 오토인코더의 출력은 입력에 대한 예측이다.
+
+![image](https://user-images.githubusercontent.com/97720878/204270831-89c21cf3-436d-4803-9912-729de383718f.png)
+기본 오토인코더의 아키텍쳐
+
+2. 인코더 (\boldsymbol{W_h}W h로 정의되는 아핀 변환affine transformation 후 스쿼싱squashing)를 거치는 입력 \boldsymbol{x}x으로 맨 아래서부터 시작한다. 이는 중간 은닉층hiddenn layer \boldsymbol{h}h을 형성한다. 이는 디코더 (또 다른 \boldsymbol{W_x}W 
+x  로 정의되는 아핀 변환 다음에 또 다른 스쿼싱이 뒤따름)의 대상이 된다. 그러면 모델의 입력에 대한 예측/재건인 출력 \boldsymbol{\hat{x}} x이 생성된다. 우리는 이를 관습convention에 따라 3층 신경망으로 부른다.
+
   
 U-Net은 적은 데이터로 충분한 학습을 하기 위해 Data Augmentation을 사용
 Data Augmentation이란 원래의 데이터를 부풀려서 더 좋은 성능을 만든다는 뜻
