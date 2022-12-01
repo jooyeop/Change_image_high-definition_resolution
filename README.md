@@ -74,7 +74,6 @@ autoencoder.summary() # autoencoder 모델의 요약을 출력
 
 
 ## 결과
-![__results___23_1](https://user-images.githubusercontent.com/97720878/197787923-0ff968f8-4ca6-47e2-9581-4e31ecdb58b8.png)
 
 ## 한계점 및 해결 방안
 국내 데이터를 활용하여 모델을 구축해볼 예정
@@ -82,4 +81,4 @@ autoencoder.summary() # autoencoder 모델의 요약을 출력
 
 
 참고 코드
-https://www.kaggle.com/code/tr1gg3rtrash/car-driving-segmentation-unet-from-scratch
+https://www.kaggle.com/code/shivam2111/image-super-resolution
