@@ -74,6 +74,7 @@ autoencoder.summary() # autoencoder 모델의 요약을 출력
 
 
 ## 결과
+![결과](https://user-images.githubusercontent.com/97720878/205232531-7e81d409-c190-4380-92e7-4132597613eb.png)
 
 ## 한계점 및 해결 방안
 국내 데이터를 활용하여 모델을 구축해볼 예정
