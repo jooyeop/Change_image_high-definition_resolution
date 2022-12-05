@@ -13,6 +13,7 @@ https://www.kaggle.com/datasets/quadeer15sh/image-super-resolution-from-unsplash
 1.kaggle에서 이미지의 데이터셋을 다운로드 받아 모델을 구현하였습니다.
 
 
+
 ## 연구 및 개발에 필요한 기술 스택
 ### AutoEncoders
 1. 오토인코더는 비지도unsupervised 방식으로 훈련된 인공 신경망으로, 먼저 데이터에 인코딩 된 표현을 학습한 다음, 학습 된 인코딩 표현에서 입력 데이터를 (가능한한 가깝게) 생성하는 것을 목표로 한다. 따라서, 오토인코더의 출력은 입력에 대한 예측이다.
