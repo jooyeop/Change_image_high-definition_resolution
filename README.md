@@ -83,4 +83,4 @@ autoencoder.summary() # autoencoder 모델의 요약을 출력
 
 
 참고 코드
-https://www.kaggle.com/code/shivam2111/image-super-resolution
+https://www.kaggle.com/code/shivam2111/image-super-resolution 
